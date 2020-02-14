@@ -23,7 +23,7 @@ def send_msg(msg_dict, queue_or_topic=settings.MQ_QUEUE):
     conn = get_conn()
     msg_str = json.dumps(msg_dict)
     log.info('Send msg: %s, %s, %s' % (type(msg_dict), type(msg_str), msg_str))
-    conn.send(queue_or_topic, msg_dict)
+    conn.send(queue_or_topic, msg_str)
 
 
 def consume_msg(listener, include_topic=False, queue=settings.MQ_QUEUE, topic=settings.MQ_TOPIC):
@@ -35,7 +35,7 @@ def consume_msg(listener, include_topic=False, queue=settings.MQ_QUEUE, topic=se
         conn.subscribe(topic)
 
     while 1:
-        time.sleep(1000)  # secs
+        time.sleep(30)  # secs
 
     close_conn()
 

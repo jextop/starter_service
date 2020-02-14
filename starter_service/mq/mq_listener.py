@@ -4,6 +4,7 @@ import json
 import logging
 
 import stomp
+from ..tasks import do_task
 
 log = logging.getLogger(__name__)
 
@@ -19,6 +20,7 @@ class MqListener(stomp.ConnectionListener):
             log.warning('Exception when parse msg: %s' % str(e))
 
         log.info('Parsed msg: {}, {}'.format(type(msg_dict), msg_dict))
+        do_task(msg_dict)
 
     def on_error(self, headers, msg_str):
         log.info('Error msg: %s, %s, %s' % (type(msg_str), msg_str, headers))

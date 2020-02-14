@@ -49,24 +49,17 @@ def chk_cache(req):
 def chk_mq(req):
     msg_dict = {
         'chk': 'mq',
-        'msg': {
-            'url': req.get_raw_uri(),
-            'path': req.get_full_path(),
-            'host': req.get_host(),
-        },
+        'msg': 'from python %s' % req.get_raw_uri(),
     }
 
-    mq.send_msg_to_queue(msg_dict)
+    # to api
     mq.send_msg_to_topic(msg_dict)
-
     return JsonResponse(msg_dict)
 
 
 def chk_job(req):
     param_dict = {
         'url': req.get_raw_uri(),
-        'path': req.get_full_path(),
-        'host': req.get_host(),
     }
     job = do_task(param_dict)
 

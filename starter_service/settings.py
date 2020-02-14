@@ -28,8 +28,8 @@ MQ_URL = '127.0.0.1'
 MQ_PORT = 61613
 MQ_USER = 'admin'
 MQ_PASSWORD = 'admin'
-MQ_QUEUE = '/queue/starter.queue'
-MQ_TOPIC = '/topic/starter.topic'
+MQ_QUEUE = '/queue/starter.process'
+MQ_TOPIC = '/topic/starter.status'
 
 CELERY_BROKER = 'redis://127.0.0.1:6379/2'
 CELERY_BACKEND = 'redis://127.0.0.1:6379/3'
