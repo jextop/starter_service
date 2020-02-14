@@ -23,7 +23,7 @@ def send_msg(msg_dict, queue_or_topic=settings.MQ_QUEUE):
     conn = get_conn()
     msg_str = json.dumps(msg_dict)
     log.info('Send msg: %s, %s, %s' % (type(msg_dict), type(msg_str), msg_str))
-    conn.send(queue_or_topic, msg_str)
+    conn.send(queue_or_topic, msg_dict)
 
 
 def consume_msg(listener, include_topic=False, queue=settings.MQ_QUEUE, topic=settings.MQ_TOPIC):
@@ -52,7 +52,7 @@ def get_conn():
         if mq_conn_lock.acquire():
             if mq_conn is None or not mq_conn.is_connected():
                 log.warning('create mq connection')
-                mq_conn = stomp.Connection10([(settings.MQ_URL, settings.MQ_PORT)])
+                mq_conn = stomp.Connection10([(settings.MQ_URL, settings.MQ_PORT)], auto_content_length=False)
                 mq_conn.connect(settings.MQ_USER, settings.MQ_PASSWORD)
 
             mq_conn_lock.release()
