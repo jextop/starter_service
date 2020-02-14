@@ -13,4 +13,4 @@ class Command(BaseCommand):
 
     def handle(self, *args, **options):
         log.info("mq starts")
-        return mq.consume_msg(MqListener(), True)
+        return mq.consume_msg(MqListener())

@@ -50,6 +50,7 @@ def chk_mq(req):
     msg_dict = {
         'chk': 'mq',
         'msg': {
+            'src': 'from python',
             'url': req.get_raw_uri(),
             'path': req.get_full_path(),
             'host': req.get_host(),
@@ -57,8 +58,6 @@ def chk_mq(req):
     }
 
     mq.send_msg_to_queue(msg_dict)
-    mq.send_msg_to_topic(msg_dict)
-
     return JsonResponse(msg_dict)
 
 
