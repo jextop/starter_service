@@ -12,6 +12,6 @@ WORKDIR /code
 RUN chmod +x *.sh && ./install.sh
 
 # do sth
-CMD ["./runserver.sh"]
+CMD ["sh", "runserver.sh"]
 
 EXPOSE 8001
