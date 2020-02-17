@@ -2,7 +2,7 @@ import logging
 
 from django.test import TestCase
 
-from ..service import redis_service as cache
+from starter_service.service import redis_service as cache
 
 log = logging.getLogger(__name__)
 

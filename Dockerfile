@@ -10,7 +10,7 @@ COPY ./deploy/settings.py /code/starter_service/
 WORKDIR /code
 
 # install
-RUN chmod +x *.sh && sh install.sh
+RUN sh install.sh
 
 # do sth
 CMD ["sh", "runserver.sh"]

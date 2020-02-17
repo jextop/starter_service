@@ -34,8 +34,17 @@ MQ_TOPIC = '/topic/starter.status'
 CELERY_BROKER = 'redis://127.0.0.1:6379/2'
 CELERY_BACKEND = 'redis://127.0.0.1:6379/3'
 
+# api service
+API_URL = 'http://127.0.0.1:8011'
+APP_KEY = 'TEST20383178435468060200'
+APP_SECRET = 'a2ec6728-9a05-11e8-8af7-e0d55e8d80e2'
+
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+# data path for files, e.g. download
+ASSET_DIR = os.path.join(BASE_DIR, 'assets')
+TEMP_DIR = os.path.join(BASE_DIR, 'tmp')
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/

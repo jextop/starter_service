@@ -2,8 +2,8 @@ import logging
 
 from django.test import TestCase
 
-from ..tasks import task
-from ..util.task_util import dispatch_task, get_task_status
+from starter_service.tasks import task
+from starter_service.util.task_util import dispatch_task, get_task_status
 
 log = logging.getLogger(__name__)
 

@@ -45,7 +45,7 @@ services:
         image: registry.cn-shanghai.aliyuncs.com/jext/starter_api:latest
         restart: always
 #        volumes:
-#            - ../data/file:/tmp/file
+#            - ../data/files:/tmp/files
         ports:
             - 8011:8011
         depends_on:
@@ -53,39 +53,39 @@ services:
             - cache
             - mq
 
-    srv:
-        image: starter_service:latest
-        build:
-          context: .
-          dockerfile: Dockerfile_ce
-        restart: always
-        ports:
-            - 8001:8001
-        depends_on:
-          - cache
-          - mq
-
-    mq_consumer:
-        image: starter_service:latest
-        command: python manage.py mq
-        restart: always
-        depends_on:
-            - cache
-            - mq
-
-    task:
-        image: starter_service:latest
-        command: celery -A starter_service worker -l info
-        restart: always
-        depends_on:
-            - cache
-            - mq
-
-    task_viewer:
-        image: starter_service:latest
-        command: celery flower --broker=redis://cache:6379/2
-        restart: always
-        ports:
-            - 5555:5555
-        depends_on:
-            - task
+#    srv:
+#        image: starter_service:latest
+#        build:
+#          context: .
+#          dockerfile: Dockerfile_ce
+#        restart: always
+#        ports:
+#            - 8001:8001
+#        depends_on:
+#          - cache
+#          - mq
+#
+#    mq_consumer:
+#        image: starter_service:latest
+#        command: python manage.py mq
+#        restart: always
+#        depends_on:
+#            - cache
+#            - mq
+#
+#    task:
+#        image: starter_service:latest
+#        command: celery -A starter_service worker -l info
+#        restart: always
+#        depends_on:
+#            - cache
+#            - mq
+#
+#    task_viewer:
+#        image: starter_service:latest
+#        command: celery flower --broker=redis://cache:6379/2
+#        restart: always
+#        ports:
+#            - 5555:5555
+#        depends_on:
+#            - task

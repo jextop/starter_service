@@ -2,7 +2,7 @@ import logging
 
 from django.test import TestCase
 
-from ..mq import mq_service as mq
+from starter_service.mq import mq_service as mq
 
 log = logging.getLogger(__name__)
 
