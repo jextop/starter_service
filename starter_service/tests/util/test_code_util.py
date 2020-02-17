@@ -11,11 +11,11 @@ log = logging.getLogger(__name__)
 class TasksTest(TestCase):
     def test_get_code(self):
         code_set = set()
-        count = 10000
+        count = 1000
         for i in range(count):
             time.sleep(0.000001)
             code = get_code()
-            if code_set.__contains__(code):
+            if code in code_set:
                 log.error('duplicated code: %s' % code)
                 continue
 
