@@ -10,28 +10,28 @@
 | 服务检查      | http://localhost:8001/chk               | |
 | Celery Flower | http://localhost:5555                   | ./flower.sh |
 
-IDE:
+# IDE:
 - download and install pycharm
 
-Env:
+# Env:
 - download and install python, select "Add python into environment"
 - [bash] ./install.sh
 - [bash] ./startproject.sh
 
-Init app and config urls:
+# Init app and config urls:
 - [bash] ./startapp.sh
 - [settings.py] Add it into the list of installed apps in settings.py
 - [url] Add the urls.py and config it into dba/urls.py
 - [view] Add functions and config in urls.py
 
-Run server:
+# Run server:
 - [bash] ./runserver.sh
 - http://127.0.0.1:8001/
 
-Command:
+# Command:
 - [bash] ./cmd.sh or python manage.py chk
 - [app] management/commands/chk.py
 
-Test:
+# Test:
 - [bash] ./test.sh or python manage.py test [app].[file].[func]
 - class ChkTest(TestCase): def test_xxx: xxx

@@ -6,4 +6,3 @@ docker pull redis:4
 docker pull webcenter/activemq:latest
 
 docker pull registry.cn-shanghai.aliyuncs.com/jext/starter_api:latest
-docker pull registry.cn-shanghai.aliyuncs.com/jext/starter_service_base:latest

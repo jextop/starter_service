@@ -13,7 +13,7 @@ class TasksTest(TestCase):
         code_set = set()
         count = 1000
         for i in range(count):
-            time.sleep(0.000001)
+            time.sleep(0.001)
             code = get_code()
             if code in code_set:
                 log.error('duplicated code: %s' % code)
