@@ -9,16 +9,16 @@ PyCharm
 
 # 启动依赖服务
 ## 安装Docker
-https://docs.docker.com/install/linux/docker-ce/ubuntu/
-https://docs.docker.com/docker-for-windows/install/
+- https://docs.docker.com/install/linux/docker-ce/ubuntu/
+- https://docs.docker.com/docker-for-windows/install/
 
 ## 拉取镜像
 ./pull.sh
 
-# 启动服务
+## 启动服务
 ./up.sh
 
-# 查看日志
+## 查看日志
 ./logs.sh
 
 ## 停止服务
@@ -33,6 +33,8 @@ https://docs.docker.com/docker-for-windows/install/
 | ------------          | --------------------------------------  | :----------------- |
 | 异步任务服务检查      | http://localhost:8001/chk               | |
 | 任务调度Celery Flower | http://localhost:5555                   | ./flower.sh |
+
+![](https://github.com/jextop/starter_service/blob/master/srv.png)
 
 # IDE:
 - download and install pycharm
