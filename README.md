@@ -1,10 +1,10 @@
 # 异步任务调度和处理
 Python + Django + Redis + ActiveMQ + Celery + ...
 
-# 依赖环境
+## 依赖环境
 Python3, 推荐Python3.6
 
-# 开发环境
+## 开发环境
 PyCharm
 
 # 启动依赖服务
