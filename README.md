@@ -1,14 +1,38 @@
-# Service starter based on Python + Django
+# 异步任务调度和处理
+Python + Django + Redis + ActiveMQ + Celery + ...
+
+# 依赖环境
+Python3, 推荐Python3.6
+
+# 开发环境
+PyCharm
+
+# 启动依赖服务
+## 安装Docker
+https://docs.docker.com/install/linux/docker-ce/ubuntu/
+https://docs.docker.com/docker-for-windows/install/
+
+## 拉取镜像
+./pull.sh
+
+# 启动服务
+./up.sh
+
+# 查看日志
+./logs.sh
+
+## 停止服务
+./down.sh
 
 | 开发运行环境     | URL:Port                                |  备注              |
 | ------------     | --------------------------------------  | :----------------- |
 | Redis缓存        | http://localhost:6379                   | |
 | ActiveMQ消息队列 | http://localhost:8161, admin/admin      | |
 
-| 管理工具         | URL:Port                                |  备注              |
-| ------------     | --------------------------------------  | :----------------- |
-| 服务检查      | http://localhost:8001/chk               | |
-| Celery Flower | http://localhost:5555                   | ./flower.sh |
+| 管理工具              | URL:Port                                |  备注              |
+| ------------          | --------------------------------------  | :----------------- |
+| 异步任务服务检查      | http://localhost:8001/chk               | |
+| 任务调度Celery Flower | http://localhost:5555                   | ./flower.sh |
 
 # IDE:
 - download and install pycharm
