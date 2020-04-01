@@ -1,12 +1,13 @@
 from __future__ import absolute_import, unicode_literals
 
-import logging
 import json
+import logging
 import time
 
 from celery import shared_task
-from .util.task_util import dispatch_task
+
 from .mq.mq_service import send_msg_to_topic
+from .util.task_util import dispatch_task
 
 log = logging.getLogger(__name__)
 
@@ -17,7 +18,7 @@ def do_task(param_dict):
 
     param_dict['status'] = 'waiting'
     param_dict['task'] = job.id
-    send_msg_to_topic(param_dict)
+    send_msg_to_topic({'status': 'waiting', 'id': param_dict['id']})
     return job
 
 
@@ -34,11 +35,11 @@ def task(param_str):
     log.info('parsed param: {}, {}'.format(type(param_dict), param_dict))
 
     param_dict['status'] = 'processing'
-    send_msg_to_topic(param_dict)
+    send_msg_to_topic({'status': 'processing', 'id': param_dict['id']})
 
     # do something
     time.sleep(3)
 
     param_dict['status'] = 'finished'
-    send_msg_to_topic(param_dict)
+    send_msg_to_topic({'status': 'finished', 'id': param_dict['id']})
     return 'finished'

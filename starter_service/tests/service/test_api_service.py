@@ -12,7 +12,7 @@ class ApiServiceTest(TestCase):
     def test_download(self):
         ret, file_name, data = download_by_name('f202002170013897056571700.jpg')
 
-        log.info('download returns :%s, %s, %d' % (ret, str(file_name), data is None or len(data)))
+        log.info('download returns :%s, %s, %d' % (ret, str(file_name), len(data) if ret else 0))
         self.assertTrue(ret is False or len(data) > 0)
 
     def test_upload(self):
