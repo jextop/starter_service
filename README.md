@@ -1,6 +1,10 @@
 # 异步任务调度和处理
-Python + Django + Redis + ActiveMQ + Celery + ...
+Python + Django + Redis + ActiveMQ + Celery + .
 
+# 一键部署Web服务
+https://github.com/jextop/StarterDeploy
+..
+# 开发调试
 ## 依赖环境
 Python3, 推荐Python3.6
 
@@ -24,6 +28,8 @@ PyCharm
 ## 停止服务
 ./down.sh
 
+# 服务信息
+
 | 开发运行环境     | URL:Port                                |  备注              |
 | ------------     | --------------------------------------  | :----------------- |
 | Redis缓存        | http://localhost:6379                   | |
@@ -34,7 +40,7 @@ PyCharm
 | 异步任务服务检查      | http://localhost:8001/chk               | |
 | 任务调度Celery Flower | http://localhost:5555                   | ./flower.sh |
 
-![](https://github.com/jextop/starter_service/blob/master/srv.png)
+![](https://github.com/jextop/starter_service/blob/master/architect.png)
 
 # IDE:
 - download and install pycharm
